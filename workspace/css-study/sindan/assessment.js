@@ -15,6 +15,14 @@ function removeAllChildren(element) {
   }
 }
 
+// テキストフィールドでEnterを押すと発火する
+userNameInput.onkeydown = event => {
+    if (event.key === 'Enter') {
+      assessmentButton.onclick();
+      console.log(assessmentButton);
+    }
+  };
+
 assessmentButton.onclick = () => {
   const userName = userNameInput.value;
   if (userName.length === 0) {
